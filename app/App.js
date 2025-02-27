@@ -1,8 +1,8 @@
-import { ExampleController } from './controllers/ExampleController.js';
+import { JumbleController } from "./controllers/JumbleController.js"
 
 class App {
 
-  ExampleController = new ExampleController() // ☑️ you can remove this - example only
+  jumbleController = new JumbleController()
 
 }
 
