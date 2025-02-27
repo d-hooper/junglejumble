@@ -33,6 +33,18 @@ export class Jumble {
           <p>${this.body}</p>
         </div>
     </div>
+    <div class="p-3 border border-outline-success rounded-3 shadow">
+      <form onsubmit="app.jumbleController.checkText()">
+        <label for="typingArea" class="fs-5">
+          Start Typing
+        </label>
+        <textarea class="w-100" id="typingArea" name="textEntry" required></textarea>
+      <div class="text-end">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+      </form>
+    </div>
     `
   }
+
 }

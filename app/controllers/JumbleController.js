@@ -37,7 +37,13 @@ export class JumbleController {
     event.preventDefault()
     const typingForm = event.target
 
-    typingForm.
-      jumblesServices.verifyTextEntry()
+    console.log('form', typingForm)
+    // @ts-ignore
+    const textEntryContent = typingForm.textEntry.value
+    console.log('form content', textEntryContent)
+    
+    jumblesServices.verifyTextEntry(textEntryContent)
+    // @ts-ignore
+    typingForm.reset()
   }
 }

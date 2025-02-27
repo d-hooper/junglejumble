@@ -1,8 +1,13 @@
 import { AppState } from "../AppState.js"
 
 class JumblesService {
-  verifyTextEntry() {
-    throw new Error("Method not implemented.")
+  verifyTextEntry(textEntryContent) {
+    const jumble = AppState.activeJumble
+    if (textEntryContent == jumble.body) {
+      window.alert('You win!')
+      return
+    }
+    window.alert('You lose...')
   }
 
   setActiveJumble(jumbleId) {
