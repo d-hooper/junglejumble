@@ -32,4 +32,12 @@ export class JumbleController {
     const activeJumbleElem = document.getElementById('activeJumbleArea')
     activeJumbleElem.innerHTML = jumble.activeTemplate
   }
+
+  checkText() {
+    event.preventDefault()
+    const typingForm = event.target
+
+    typingForm.
+      jumblesServices.verifyTextEntry()
+  }
 }

@@ -1,6 +1,9 @@
 import { AppState } from "../AppState.js"
 
 class JumblesService {
+  verifyTextEntry() {
+    throw new Error("Method not implemented.")
+  }
 
   setActiveJumble(jumbleId) {
     const jumbles = AppState.jumbles
