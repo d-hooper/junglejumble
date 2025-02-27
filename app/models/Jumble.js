@@ -1,7 +1,7 @@
 import { generateId } from "../utils/GenerateId.js"
 
 export class Jumble {
-  constructor( data) {
+  constructor(data) {
     this.id = generateId()
     this.name = data.name
     this.body = data.body
@@ -11,7 +11,15 @@ export class Jumble {
     this.endTime = null
   }
 
-    get ListTemplate() { 
-        return `<li>${this.name}</li>`
-    }
+  get listTemplate() {
+    return `
+    <li class="px-3">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-warning">Start</button>
+        <p class="ms-3 mb-0">${this.name}</p>
+      </div>
+      <hr>
+    </li>
+    `
+  }
 }

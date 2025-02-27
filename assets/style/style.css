@@ -13,6 +13,10 @@ li {
   list-style-type: none;
 }
 
+hr {
+  margin: 0.75rem 0;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;
