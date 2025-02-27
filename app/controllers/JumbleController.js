@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { jumblesServices } from "../services/JumblesService.js";
 
 
 export class JumbleController {
@@ -17,4 +18,10 @@ export class JumbleController {
     const jumblesListElem = document.getElementById('jumbleList')
     jumblesListElem.innerHTML = jumblesListContent
   }
+
+
+  selectJumble(jumbleId) {
+    jumblesServices.setActiveJumble(jumbleId)
+  }
+  
 }

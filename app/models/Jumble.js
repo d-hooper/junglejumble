@@ -15,7 +15,7 @@ export class Jumble {
     return `
     <li class="px-3">
       <div class="d-flex align-items-center">
-        <button class="btn btn-warning">Start</button>
+        <button onclick="app.jumbleController.selectJumble('${this.id}')" class="btn btn-warning">Start</button>
         <p class="ms-3 mb-0">${this.name}</p>
       </div>
       <hr>
