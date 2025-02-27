@@ -6,7 +6,7 @@ export class JumbleController {
 
   constructor() {
     AppState.on('activeJumble', this.drawActiveJumble)
-    
+
     console.log('WE are here!');
 
     this.drawJumbleList()
@@ -23,13 +23,13 @@ export class JumbleController {
 
   selectJumble(jumbleId) {
     jumblesServices.setActiveJumble(jumbleId)
-  
+
   }
-  
+
   drawActiveJumble() {
     const jumble = AppState.activeJumble
     const activeJumbleContent = ''
     const activeJumbleElem = document.getElementById('activeJumbleArea')
-    activeJumbleElem.innerHTML = 
+    activeJumbleElem.innerHTML = jumble.activeTemplate
   }
 }

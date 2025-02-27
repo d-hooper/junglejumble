@@ -22,4 +22,17 @@ export class Jumble {
     </li>
     `
   }
+  get activeTemplate() {
+    return `
+    <div class="">
+       <div class="d-flex align-items-center justify-content-between">
+           <h3>${this.name}</h3>
+           <p class="mb-0">${this.endTime}</p>
+        </div>
+        <div>
+          <p>${this.body}</p>
+        </div>
+    </div>
+    `
+  }
 }
