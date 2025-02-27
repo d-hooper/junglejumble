@@ -17,6 +17,11 @@ hr {
   margin: 0.75rem 0;
 }
 
+textarea {
+  min-height: 30dvh;
+  max-height: 50dvh;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;

@@ -24,7 +24,7 @@ export class Jumble {
   }
   get activeTemplate() {
     return `
-    <div class="">
+    <div class="border border-outline-warning rounded-3 shadow">
        <div class="d-flex align-items-center justify-content-between">
            <h3>${this.name}</h3>
            <p class="mb-0">${this.endTime}</p>
