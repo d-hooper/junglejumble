@@ -30,7 +30,8 @@ export class JumbleController {
     const jumble = AppState.activeJumble
     const activeJumbleContent = ''
     const activeJumbleElem = document.getElementById('activeJumbleArea')
-    activeJumbleElem.innerHTML = jumble.activeTemplate
+    activeJumbleElem.innerHTML = jumble.activeTemplate    
+    jumblesServices.startTime()
   }
 
   checkText() {
