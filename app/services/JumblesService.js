@@ -1,13 +1,26 @@
 import { AppState } from "../AppState.js"
+import { Pop } from "../utils/Pop.js"
 
 class JumblesService {
   verifyTextEntry(textEntryContent) {
     const jumble = AppState.activeJumble
     if (textEntryContent == jumble.body) {
       this.endTime()
-      window.alert('You win!')
+      Pop.toast('Success!')
+      this.resetTimeProperties()
       return
     }
+    Pop.toast('Try again')
+  }
+
+  resetTimeProperties() {
+    const jumble = AppState.activeJumble
+    jumble.startTime = null
+    jumble.endTime = null
+    if (jumble.latestTime < jumble.fastestTime) {
+      jumble.fastestTime = jumble.latestTime
+    }
+    AppState.emit('activeJumble')
   }
 
   setActiveJumble(jumbleId) {
@@ -20,7 +33,7 @@ class JumblesService {
     const jumble = AppState.activeJumble
     jumble.startTime = new Date().getTime()
     
-    console.log('start', jumble.startTime);
+    // console.log('start', jumble.startTime);
   }
 
   endTime() {
@@ -28,7 +41,8 @@ class JumblesService {
     jumble.endTime = new Date().getTime()
     console.log('end', jumble.endTime);
     const timeBetween = (jumble.endTime / 1000) - (jumble.startTime / 1000)
-    console.log('time between:', timeBetween);
+    jumble.latestTime = timeBetween
+    console.log('time between:', timeBetween.toFixed(2));
   }
 
 }

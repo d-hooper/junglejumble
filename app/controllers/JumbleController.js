@@ -7,11 +7,13 @@ export class JumbleController {
   constructor() {
     AppState.on('activeJumble', this.drawActiveJumble)
 
-    console.log('WE are here!');
-
     this.drawJumbleList()
   }
 
+  selectJumble(jumbleId) {
+    jumblesServices.setActiveJumble(jumbleId)
+
+  }
 
   drawJumbleList() {
     const jumbles = AppState.jumbles
@@ -21,17 +23,14 @@ export class JumbleController {
     jumblesListElem.innerHTML = jumblesListContent
   }
 
-  selectJumble(jumbleId) {
-    jumblesServices.setActiveJumble(jumbleId)
-
-  }
 
   drawActiveJumble() {
     const jumble = AppState.activeJumble
-    const activeJumbleContent = ''
+    // const activeJumbleContent = ''
     const activeJumbleElem = document.getElementById('activeJumbleArea')
     activeJumbleElem.innerHTML = jumble.activeTemplate    
-    jumblesServices.startTime()
+    jumble.startTime ?? jumblesServices.startTime()
+    console.log('start:', jumble.startTime)
   }
 
   checkText() {

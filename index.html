@@ -17,20 +17,15 @@
   <header>
     <nav class="navbar bg-codeworks text-light gap-2 px-2">
       <img src="./assets/img/logo.png" height="45" alt="" loading="lazy">
-      <div><b>junglejumble</b></div>
+      <div><h1 class="fs-4">Jungle Jumble</h1></div>
       <div class="ms-auto" id="authstate"></div>
     </nav>
   </header>
 
   <main>
-    <section class="container">
+    <section class="container mt-4">
       <div class="row">
-        <div class="col-12">
-          <h1>Jungle Jumble</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-8">
+        <div class="col-7">
           <div id="activeJumbleArea">
             <!-- STUB jumble body
             <div class="d-flex align-items-center justify-content-between">
@@ -56,15 +51,16 @@
           </div>
 
         </div>
-        <div class="col-4">
-          <div class="p-3 border border-outline-warning rounded-3 shadow">
-            <ul id="jumbleList">
-              <li class="px-3">
+        <div class="col-5">
+          <div class="bg-light p-3 border border-outline-warning rounded-3 shadow overflow-auto">
+            <h2 class="fs-5 fw-bold px-3 py-1">Test your typing skills</h2>
+            <ul id="jumbleList" class="ps-0 mb-0">
+              <!-- <li class="px-1">
                 <div class="d-flex align-items-center">
                   <button class="btn btn-warning">Start</button>
                   <p class="ms-3 mb-0">🐅Jumble</p>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
