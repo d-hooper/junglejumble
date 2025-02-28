@@ -6,7 +6,7 @@ export class Jumble {
     this.name = data.name
     this.body = data.body
     // to best keep track of the fastest times you might want these properties too! They would start null cause no one has completed these yet.
-    this.fastestTime = null
+    this.fastestTime = null 
     this.latestTime = null
     this.startTime = null
     this.endTime = null
@@ -17,13 +17,24 @@ export class Jumble {
     return formattedTime.toString()
   }
 
+  get formattedFastestTime() {
+    const formattedTime = this.fastestTime ? this.fastestTime.toFixed(2) : 0
+    return formattedTime
+  }
+
   get listTemplate() {
     return `
     <li class="px-3">
-      <div class="d-flex align-items-center">
-        <button onclick="app.jumbleController.selectJumble('${this.id}')" class="btn btn-outline-success fw-bold">Start</button>
-        <p class="ms-3 mb-0">${this.name}</p>
+    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <button onclick="app.jumbleController.selectJumble('${this.id}')" class="btn btn-outline-success fw-bold">Start</button>
+      <p class="ms-3 mb-0">${this.name}</p>
       </div>
+      <div class="d-flex gap-1 fw-bold">
+      <span>Fastest Time:</span>
+      <p class="text-end mb-0">${this.formattedFastestTime} s</p>
+    </div>
+    </div>  
       <hr>
     </li>
     `

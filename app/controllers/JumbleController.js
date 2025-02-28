@@ -6,6 +6,7 @@ export class JumbleController {
 
   constructor() {
     AppState.on('activeJumble', this.drawActiveJumble)
+    AppState.on('jumbles', this.drawJumbleList)
 
     this.drawJumbleList()
   }

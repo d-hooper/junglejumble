@@ -17,10 +17,13 @@ class JumblesService {
     const jumble = AppState.activeJumble
     jumble.startTime = null
     jumble.endTime = null
-    if (jumble.latestTime < jumble.fastestTime) {
+    console.log(jumble.fastestTime);
+    if (jumble.fastestTime == null || jumble.latestTime < jumble.fastestTime) {
       jumble.fastestTime = jumble.latestTime
     }
     AppState.emit('activeJumble')
+    AppState.emit('jumbles')
+
   }
 
   setActiveJumble(jumbleId) {
