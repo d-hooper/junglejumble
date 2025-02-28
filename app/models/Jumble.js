@@ -13,13 +13,24 @@ export class Jumble {
   }
 
   get formattedLatestTime() {
-    const formattedTime = this.latestTime ? this.latestTime.toFixed(2) : 0
-    return formattedTime.toString()
+    const formattedTime = this.latestTime ? this.latestTime.toFixed(2) : ''
+    return formattedTime.toString() + 'seconds'
   }
 
   get formattedFastestTime() {
-    const formattedTime = this.fastestTime ? this.fastestTime.toFixed(2) : 0
-    return formattedTime
+    const formattedTime = this.fastestTime ? this.fastestTime.toFixed(2) : ''
+    return formattedTime.toString()
+  }
+
+  get textBodyWordCount() {
+    return this.body.split(' ').length
+  }
+  get typedWordsPerMinute() {
+    const wpm = (this.textBodyWordCount * 60 / this.fastestTime)
+    if (this.fastestTime == null) {
+      return ''
+    } 
+    return wpm.toString() + 'wpm'
   }
 
   get listTemplate() {
@@ -31,8 +42,8 @@ export class Jumble {
       <p class="ms-3 mb-0">${this.name}</p>
       </div>
       <div class="d-flex gap-1 fw-bold">
-      <span>Fastest Time:</span>
-      <p class="text-end mb-0">${this.formattedFastestTime} s</p>
+      <p class="text-end mb-0">${this.formattedFastestTime}</p>
+      <span>${this.typedWordsPerMinute}</span>
     </div>
     </div>  
       <hr>

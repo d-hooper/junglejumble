@@ -23,7 +23,6 @@ class JumblesService {
     }
     AppState.emit('activeJumble')
     AppState.emit('jumbles')
-
   }
 
   setActiveJumble(jumbleId) {
@@ -35,18 +34,15 @@ class JumblesService {
   startTime() {
     const jumble = AppState.activeJumble
     jumble.startTime = new Date().getTime()
-    
-    // console.log('start', jumble.startTime);
   }
 
   endTime() {
     const jumble = AppState.activeJumble
     jumble.endTime = new Date().getTime()
-    console.log('end', jumble.endTime);
     const timeBetween = (jumble.endTime / 1000) - (jumble.startTime / 1000)
     jumble.latestTime = timeBetween
-    console.log('time between:', timeBetween.toFixed(2));
   }
+
 
 }
 
